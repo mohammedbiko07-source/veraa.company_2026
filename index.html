@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <title>VERAA | شركة رائدة في التسويق الرقمي</title>
+  <meta name="description" content="VERAA شركة رائدة في حلول التسويق الرقمي وإدارة السوشيال ميديا.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Kufi+Arabic:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* متغيرات CSS للألوان والخطوط */
+    :root {
+      --primary-color: #007bff;
+      /* أزرق للثقة */
+      --secondary-color: #28a745;
+      /* أخضر للابتكار */
+      --accent-color: #ffc107;
+      /* أصفر للإبراز */
+      --text-color: #333;
+      --bg-color: #f8f9fa;
+      --alt-bg: #e9ecef;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+      --transition: 0.3s ease;
+      --border-radius: 8px;
+      --font-primary: 'Inter', sans-serif;
+      --font-arabic: 'Noto Kufi Arabic', sans-serif;
+    }
+
+    /* إعادة تعيين الأساسيات */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-arabic), var(--font-primary);
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      scroll-behavior: smooth;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .header__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav__list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav__list a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav__list a:hover,
+    .nav__list a:focus {
+      color: var(--accent-color);
+      border-bottom-color: var(--accent-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(40, 167, 69, 0.8)), url('https://source.unsplash.com/featured/?digital-marketing,team') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero__grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero__text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero__text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--accent-color);
+      color: var(--text-color);
+    }
+
+    .btn--primary:hover {
+      background: #e0a800;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section--alt {
+      background-color: var(--alt-bg);
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    /* Grid for Cards and Team */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .team {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Cards */
+    .card,
+    .member {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .card:hover,
+    .member:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card h3,
+    .member h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .member__photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--secondary-color);
+    }
+
+    /* تنسيق الرقم والتخصص في الأعضاء */
+    .member p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .member .role {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .member .phone {
+      color: var(--secondary-color);
+    }
+
+    .member .specialization {
+      color: #666;
+      font-style: italic;
+    }
+
+    /* Contact Form */
+    .cta {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+    }
+
+    .form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .input {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .input:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-color);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer__links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    .footer__links a {
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer__links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header__row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav__list {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero__text h1 {
+        font-size: 2rem;
+      }
+
+      .hero__text p {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 2rem 1rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 60vh;
+      }
+
+      .hero__text h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="#"><img src="لوجو الشركه .jpeg" alt="VERAA"
+          width="120"></a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#about">عن الشركة</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#team">الأعضاء</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1>VERAA | شركة رائدة في حلول التسويق الرقمي</h1>
+          <p>نحوّل فكرتك لبراند قوي، ووجودك الرقمي لنتائج حقيقية ومكسب ثابت.</p>
+          <a class="btn btn--primary" href="#services">استكشف خدماتنا</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--alt">
+      <div class="container">
+        <h2>عن الشركة</h2>
+        <p>
+          شركة رائدة في حلول التسويق الرقمي وإدارة السوشيال ميديا.
+          بنوفر باقة متكاملة من الخدمات تشمل إدارة صفحات السوشيال ميديا بالكامل، تكبير وزيادة المتابعين بشكل فعّال،
+          تمويل وإدارة الحملات الإعلانية باحتراف، تصميمات جرافيك احترافية، مونتاج وصناعة محتوى، برمجة وتطوير مواقع
+          وتطبيقات، واستشارات تسويقية وبناء هوية بصرية كاملة.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>خدماتنا</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>إدارة صفحات السوشيال ميديا</h3>
+            <p>إدارة كاملة لحساباتك على المنصات المختلفة.</p>
+          </article>
+          <article class="card">
+            <h3>زيادة المتابعين</h3>
+            <p>استراتيجيات فعّالة لتكبير قاعدة جمهورك.</p>
+          </article>
+          <article class="card">
+            <h3>حملات إعلانية</h3>
+            <p>تمويل وإدارة الحملات الإعلانية باحتراف.</p>
+          </article>
+          <article class="card">
+            <h3>تصميمات جرافيك</h3>
+            <p>تصميمات احترافية تعكس هوية شركتك.</p>
+          </article>
+          <article class="card">
+            <h3>مونتاج وصناعة محتوى</h3>
+            <p>فيديوهات ومحتوى جذاب يرفع التفاعل.</p>
+          </article>
+          <article class="card">
+            <h3>برمجة وتطوير</h3>
+            <p>مواقع وتطبيقات حديثة تدعم نموك.</p>
+          </article>
+          <article class="card">
+            <h3>استشارات وهوية بصرية</h3>
+            <p>بناء براند قوي واستراتيجيات تسويقية متكاملة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section section--alt">
+      <div class="container">
+        <h2>فريق VERAA</h2>
+        <div class="grid team">
+          <article class="member">
+            <img src="محمد محمود محمد jpeg.jpeg" alt="محمد محمود محمد"
+              class="member__photo">
+            <h3>محمد محمود محمد</h3>
+            <p class="role">Progamming</p>
+            <p class="phone">رقم الهاتف:01065775560 
+
+            </p>
+            <p class="specialization">تخصص : front-end & data analysis</p>
+          </article>
+          <article class="member">
+            <img src="اسراء  عوض  الشراباصي.jpeg" alt="اسراء عوض الشرباصي "
+              class="member__photo">
+            <h3>اسراء عوض الشرباصي</h3>
+            <p class="role">Markting-Manager</p>
+            <p class="phone">رقم الهاتف: 01503163645</p>
+            <p class="specialization">تخصص: تسويق رقمي وسوشيال ميديا</p>
+          </article>
+          <article class="member">
+            <img src="محمد ايمن الحلي.jpeg" alt="محمد ايمن الحلي " class="member__photo">
+            <h3>محمد ايمن الحلي</h3>
+            <p class="role">اعلانات تمويل </p>
+            <p class="phone">رقم الهاتف: 01553184283</p>
+            <p class="specialization">تخصص:اعلانات مموله</p>
+          </article>
+          <article class="member">
+            <img src="صفيه احمد .jpeg " alt="صفيه  احمد جمعه"
+              class="member__photo">
+            <h3>صفيه احمد جمعه</h3>
+            <p class="role">Markting</p>
+            <p class="phone">رقم الهاتف: 01210384362</p>
+            <p class="specialization">تخصص: Markting</p>
+          </article>
+          <article class="member">
+            <img src="اسراء اشرف خضر .jpeg" alt="اسراء اشرف خضر "
+              class="member__photo">
+            <h3>اسراء اشرف خضر</h3>
+            <p class="role">حسابات </p>
+            <p class="phone">رقم الهاتف: 01095203343</p>
+            <p class="specialization">تخصص: حسابات</p>
+          </article>
+          <article class="member">
+            <img src="خلود عرفه سالم 2jpeg.jpeg" alt="خلود عرفه سالم"
+              class="member__photo">
+            <h3>خلود عرفه سالم</h3>
+            <p class="role">Markting</p>
+            <p class="phone">رقم الهاتف: 01067965304</p>
+            <p class="specialization">تخصص: Markting</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id
